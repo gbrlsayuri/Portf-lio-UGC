@@ -24,8 +24,8 @@
   --acento-suave:rgba(98,171,214,.32);
   --tinta:#000000;
   --tinta-suave:#5a5a5a;
-  --linha:rgba(0,0,0,.14);
-  --linha-forte:rgba(0,0,0,.3);
+  --linha:rgba(0,0,0,.2);
+  --linha-forte:rgba(0,0,0,.45);
   --wrap:1200px;
 }
 
@@ -76,8 +76,14 @@ section[id]{scroll-margin-top:110px}
 /* ---- rótulo de seção numerada ---- */
 .cabecalho-secao{margin-bottom:64px;max-width:640px}
 .numero-secao{
-  display:block;font-family:"Jost",sans-serif;font-size:.78rem;font-weight:500;
-  letter-spacing:.3em;text-transform:uppercase;color:var(--acento-texto);margin-bottom:18px;
+  display:flex;align-items:center;gap:14px;margin-bottom:18px;
+  font-family:"Jost",sans-serif;font-size:.78rem;font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--acento-texto);
+}
+.numero-secao i{
+  font-style:normal;display:inline-flex;align-items:center;justify-content:center;
+  width:32px;height:32px;background:var(--tinta);color:var(--off-white);
+  font-size:.72rem;letter-spacing:0;flex:none;
 }
 .cabecalho-secao h2{font-size:clamp(2rem,4vw,2.8rem)}
 .cabecalho-secao p{margin-top:18px;color:var(--tinta-suave);font-size:1.02rem;max-width:52ch}
@@ -101,8 +107,8 @@ section[id]{scroll-margin-top:110px}
   transition:color .2s;
 }
 .nav-lista a:hover{color:var(--acento-texto)}
-.nav-cta{border:1px solid var(--tinta) !important;color:var(--tinta) !important;margin-left:8px}
-.nav-cta:hover{background:var(--tinta);color:var(--off-white) !important}
+.nav-cta{border:1px solid var(--tinta) !important;background:var(--tinta);color:var(--off-white) !important;margin-left:8px}
+.nav-cta:hover{background:transparent;color:var(--tinta) !important}
 
 .menu-btn{
   display:none;width:44px;height:44px;border:1px solid var(--tinta);background:transparent;
@@ -130,17 +136,17 @@ section[id]{scroll-margin-top:110px}
 }
 
 /* ============================================================
-   BOTÕES :: retangulares, só contorno
+   BOTÕES :: retangulares, preenchidos em preto ou azul
    ============================================================ */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:17px 34px;border:1px solid var(--tinta);background:transparent;
+  padding:17px 34px;border:2px solid var(--tinta);background:var(--tinta);
   font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--tinta);cursor:pointer;transition:background .25s,color .25s,border-color .25s;
+  color:var(--off-white);cursor:pointer;transition:background .25s,color .25s,border-color .25s;
 }
-.btn:hover{background:var(--tinta);color:var(--off-white)}
-.btn--marrom{border-color:var(--acento);color:var(--acento-texto)}
-.btn--marrom:hover{background:var(--acento);color:var(--tinta)}
+.btn:hover{background:transparent;color:var(--tinta)}
+.btn--marrom{border-color:var(--acento);background:var(--acento);color:var(--tinta)}
+.btn--marrom:hover{background:transparent;color:var(--acento-texto)}
 .botoes{display:flex;flex-wrap:wrap;gap:16px}
 
 /* ============================================================
@@ -150,8 +156,8 @@ section[id]{scroll-margin-top:110px}
    ============================================================ */
 .midia{
   position:relative;width:100%;
-  background:linear-gradient(155deg,var(--acento-suave) 0%,var(--areia) 55%,var(--off-white) 100%);
-  border:1px solid var(--linha);
+  background:linear-gradient(155deg,var(--acento) 0%,var(--acento-suave) 45%,var(--off-white) 100%);
+  border:1px solid var(--tinta);
   display:flex;align-items:flex-end;justify-content:flex-start;
   overflow:hidden;
 }
@@ -179,8 +185,9 @@ section[id]{scroll-margin-top:110px}
 .hero{padding:180px 0 90px;min-height:100svh;display:flex;align-items:center}
 .hero__grade{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;width:100%}
 .hero__tag{
-  display:inline-block;font-size:.76rem;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--acento-texto);margin-bottom:26px;
+  display:inline-block;padding:10px 18px;background:var(--tinta);
+  font-size:.76rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--off-white);margin-bottom:26px;
 }
 .hero h1{font-size:clamp(3rem,7.4vw,5.6rem);letter-spacing:.01em}
 .hero__frase{margin-top:26px;font-size:1.15rem;color:var(--tinta-suave);max-width:46ch}
@@ -245,17 +252,17 @@ section[id]{scroll-margin-top:110px}
    3. CONTEÚDOS DE DESTAQUE
    ============================================================ */
 .destaques-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.destaque-card{display:block;border:1px solid var(--linha);background:var(--off-white)}
+.destaque-card{display:block;border:2px solid var(--tinta);background:var(--off-white)}
 .destaque-card:hover .midia{filter:brightness(.92)}
 .destaque-card .midia{aspect-ratio:9/16}
 .play-botao{
   position:absolute;inset:0;margin:auto;width:64px;height:64px;
-  border:1px solid var(--off-white);border-radius:50%;
+  background:var(--acento);border:2px solid var(--tinta);border-radius:50%;
   display:flex;align-items:center;justify-content:center;
 }
 .play-botao::after{
   content:"";width:0;height:0;margin-left:4px;
-  border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid var(--off-white);
+  border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid var(--tinta);
 }
 .destaque-corpo{padding:24px}
 .destaque-numero{font-family:"Tenor Sans",serif;font-size:1.7rem;color:var(--acento-texto)}
@@ -280,7 +287,7 @@ section[id]{scroll-margin-top:110px}
 .filtro-btn[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--off-white)}
 
 .trabalhos-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px}
-.trabalho-card{border:1px solid var(--linha);background:var(--off-white);transition:opacity .3s,transform .3s}
+.trabalho-card{border:1px solid var(--tinta);background:var(--off-white);transition:opacity .3s,transform .3s}
 .trabalho-card .midia{aspect-ratio:4/5}
 .trabalho-corpo{padding:20px}
 .trabalho-nicho{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acento-texto)}
@@ -290,9 +297,12 @@ section[id]{scroll-margin-top:110px}
 /* ============================================================
    5. COMO EU TE AJUDO
    ============================================================ */
-.servicos-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linha);border:1px solid var(--linha)}
+.servicos-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--tinta);border:1px solid var(--tinta)}
 .servico-card{background:var(--off-white);padding:44px 36px}
-.servico-numero{font-family:"Tenor Sans",serif;font-size:1rem;color:var(--acento-texto)}
+.servico-numero{
+  display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+  background:var(--acento);font-family:"Tenor Sans",serif;font-size:.95rem;color:var(--tinta);
+}
 .servico-titulo{margin-top:22px;font-size:1.2rem}
 .servico-desc{margin-top:14px;font-size:.94rem;color:var(--tinta-suave)}
 
@@ -304,6 +314,7 @@ section[id]{scroll-margin-top:110px}
    6. NÚMEROS E DEPOIMENTOS
    ============================================================ */
 .metricas-grade{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding-bottom:80px;border-bottom:1px solid var(--linha)}
+.metrica{border-top:3px solid var(--acento);padding-top:20px}
 .metrica b{
   display:block;font-family:"Tenor Sans",serif;font-weight:400;font-size:clamp(2.1rem,4vw,3.2rem);
 }
@@ -312,13 +323,13 @@ section[id]{scroll-margin-top:110px}
 .subtitulo-bloco{margin:80px 0 36px;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--acento-texto)}
 
 .resultados-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding-bottom:80px;border-bottom:1px solid var(--linha)}
-.resultado-card{border:1px solid var(--linha);padding:34px;background:var(--off-white)}
+.resultado-card{border:1px solid var(--tinta);border-top:4px solid var(--acento);padding:34px;background:var(--off-white)}
 .resultado-marca{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acento-texto)}
 .resultado-objetivo{margin-top:16px;font-size:1rem}
 .resultado-texto{margin-top:12px;font-size:.92rem;color:var(--tinta-suave)}
 
 .depoimentos-grade{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-.depoimento-card{border:1px solid var(--linha);padding:34px;background:var(--off-white)}
+.depoimento-card{border:1px solid var(--tinta);padding:34px;background:var(--off-white)}
 .depoimento-texto{font-size:1.02rem;font-style:italic;font-family:"Tenor Sans",serif;line-height:1.55}
 .depoimento-autor{margin-top:20px;font-size:.8rem;letter-spacing:.06em;color:var(--tinta-suave)}
 .depoimento-autor b{color:var(--tinta);font-weight:500}
@@ -363,13 +374,13 @@ section[id]{scroll-margin-top:110px}
 /* ============================================================
    8. RODAPÉ
    ============================================================ */
-footer{border-top:1px solid var(--linha);padding:56px 0;background:var(--off-white)}
+footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
 .rodape-int{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
-.rodape-marca{font-family:"Tenor Sans",serif;font-size:1.05rem;letter-spacing:.06em}
+.rodape-marca{font-family:"Tenor Sans",serif;font-size:1.05rem;letter-spacing:.06em;color:var(--off-white)}
 .rodape-redes{display:flex;gap:26px}
-.rodape-redes a{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave)}
-.rodape-redes a:hover{color:var(--acento-texto)}
-.rodape-copy{width:100%;margin-top:24px;padding-top:24px;border-top:1px solid var(--linha);font-size:.76rem;color:var(--tinta-suave)}
+.rodape-redes a{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acento)}
+.rodape-redes a:hover{color:var(--off-white)}
+.rodape-copy{width:100%;margin-top:24px;padding-top:24px;border-top:1px solid rgba(241,241,241,.25);font-size:.76rem;color:rgba(241,241,241,.75)}
 
 /* ============================================================
    CARD DE CAPTURA (mídia kit)
@@ -381,7 +392,8 @@ footer{border-top:1px solid var(--linha);padding:56px 0;background:var(--off-whi
 }
 .captura-fundo.ativo{opacity:1;visibility:visible}
 .captura-card{
-  position:relative;width:min(420px,100%);background:var(--off-white);border:1px solid var(--linha-forte);
+  position:relative;width:min(420px,100%);background:var(--off-white);
+  border:1px solid var(--tinta);border-top:4px solid var(--acento);
   padding:48px 40px;transform:translateY(16px);transition:transform .3s ease;
 }
 .captura-fundo.ativo .captura-card{transform:translateY(0)}
@@ -490,7 +502,7 @@ footer{border-top:1px solid var(--linha);padding:56px 0;background:var(--off-whi
         </div>
       </div>
       <div class="sobre__texto">
-        <span class="numero-secao">01 · Sobre</span>
+        <span class="numero-secao"><i>01</i>Sobre</span>
         <p>Oi, eu sou a Gabriela. Moro em Florianópolis e vivo criando conteúdo que parece uma conversa entre amigas, não um comercial. Gosto de testar produtos de verdade, mostrar o que funciona e contar isso do meu jeito, com leveza e sem forçar a barra.</p>
         <p>Trabalho de perto com cada marca desde a ideia até a entrega final, porque acredito que o melhor resultado nasce quando a gente constrói o roteiro junto.</p>
         <ul class="promessas">
@@ -509,7 +521,7 @@ footer{border-top:1px solid var(--linha);padding:56px 0;background:var(--off-whi
   <section id="destaques" class="secao secao--off">
     <div class="env">
       <div class="cabecalho-secao reveal">
-        <span class="numero-secao">02 · Destaques</span>
+        <span class="numero-secao"><i>02</i>Destaques</span>
         <h2>Conteúdos em destaque</h2>
         <p>Três vídeos que mostram bem o meu jeito de criar. Clique em qualquer um para assistir na íntegra.</p>
       </div>
@@ -523,7 +535,7 @@ footer{border-top:1px solid var(--linha);padding:56px 0;background:var(--off-whi
   <section id="trabalhos" class="secao">
     <div class="env">
       <div class="cabecalho-secao reveal">
-        <span class="numero-secao">03 · Trabalhos</span>
+        <span class="numero-secao"><i>03</i>Trabalhos</span>
         <h2>Trabalhos por nicho</h2>
         <p>Uma amostra dos conteúdos que já produzi, organizados por área. Filtre pelo nicho que te interessa.</p>
       </div>
@@ -538,7 +550,7 @@ footer{border-top:1px solid var(--linha);padding:56px 0;background:var(--off-whi
   <section id="servicos" class="secao secao--off">
     <div class="env">
       <div class="cabecalho-secao reveal">
-        <span class="numero-secao">04 · Serviços</span>
+        <span class="numero-secao"><i>04</i>Serviços</span>
         <h2>Como eu te ajudo</h2>
         <p>Seis formas de trabalharmos juntas, do vídeo avulso ao pacote fixo mensal.</p>
       </div>
@@ -552,7 +564,7 @@ footer{border-top:1px solid var(--linha);padding:56px 0;background:var(--off-whi
   <section id="numeros" class="secao">
     <div class="env">
       <div class="cabecalho-secao reveal">
-        <span class="numero-secao">05 · Números</span>
+        <span class="numero-secao"><i>05</i>Números</span>
         <h2>Números e depoimentos</h2>
         <p>O resultado do trabalho contado em números e nas palavras de quem já foi cliente.</p>
       </div>
@@ -573,7 +585,7 @@ footer{border-top:1px solid var(--linha);padding:56px 0;background:var(--off-whi
   <section id="contato" class="secao secao--off">
     <div class="env">
       <div class="cabecalho-secao reveal">
-        <span class="numero-secao">06 · Contato</span>
+        <span class="numero-secao"><i>06</i>Contato</span>
         <h2>Bora criar juntos?</h2>
         <p>Me conta um pouco sobre a sua marca e o que você precisa. Eu respondo rapidinho.</p>
       </div>
