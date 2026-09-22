@@ -4,28 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gabriela Sayuri | Portfólio UGC</title>
-<meta name="description" content="Portfólio de Gabriela Sayuri, criadora de conteúdo UGC. Vídeos e fotos autênticos para marcas que querem se aproximar de verdade das pessoas.">
+<meta name="description" content="Portfólio de Gabriela Sayuri, criadora de conteúdo UGC de Florianópolis. Vídeos e fotos autênticos para marcas de beleza, moda, comida, casa, maternidade e pet.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Tenor+Sans&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   VARIÁVEIS :: paleta da Gabriela (#62ABD6, #000000, #F1F1F1)
-   --acento é o azul puro da paleta, usado em bordas, preenchimentos
-   e números grandes. --acento-texto é o mesmo azul escurecido só
-   para textos pequenos, porque o azul puro não tem contraste
-   suficiente para leitura em cima do fundo claro.
+   VARIÁVEIS :: paleta clean girl bege
+   --areia é o fundo geral, --off-white é o fundo dos blocos/cartões.
+   --marrom é o acento principal (números, ícones, linhas de destaque)
+   e --marrom-texto é uma versão mais escura dele, usada só em texto
+   pequeno para manter contraste de leitura confortável.
+   --nude é o acento secundário, mais claro, para detalhes suaves.
    ============================================================ */
 :root{
-  --areia:#F1F1F1;
-  --off-white:#F1F1F1;
-  --acento:#62ABD6;
-  --acento-texto:#276d96;
-  --acento-suave:rgba(98,171,214,.32);
-  --tinta:#000000;
-  --tinta-suave:#5a5a5a;
-  --linha:rgba(0,0,0,.2);
-  --linha-forte:rgba(0,0,0,.45);
+  --areia:#efe9e1;
+  --off-white:#fdfcfa;
+  --marrom:#8a7461;
+  --marrom-texto:#6b5442;
+  --nude:#c9b5a3;
+  --tinta:#2a221c;
+  --tinta-suave:#5c5148;
+  --linha:rgba(42,34,28,.18);
+  --linha-forte:rgba(42,34,28,.4);
   --wrap:1200px;
 }
 
@@ -71,14 +72,14 @@ section[id]{scroll-margin-top:110px}
 }
 .pular:focus{left:0}
 
-:focus-visible{outline:2px solid var(--acento);outline-offset:4px}
+:focus-visible{outline:2px solid var(--marrom-texto);outline-offset:4px}
 
 /* ---- rótulo de seção numerada ---- */
 .cabecalho-secao{margin-bottom:64px;max-width:640px}
 .numero-secao{
   display:flex;align-items:center;gap:14px;margin-bottom:18px;
   font-family:"Jost",sans-serif;font-size:.78rem;font-weight:500;
-  letter-spacing:.3em;text-transform:uppercase;color:var(--acento-texto);
+  letter-spacing:.3em;text-transform:uppercase;color:var(--marrom-texto);
 }
 .numero-secao i{
   font-style:normal;display:inline-flex;align-items:center;justify-content:center;
@@ -93,7 +94,7 @@ section[id]{scroll-margin-top:110px}
    ============================================================ */
 .topo{
   position:fixed;inset:0 0 auto 0;z-index:100;
-  background:rgba(241,241,241,.92);backdrop-filter:blur(10px);
+  background:rgba(239,233,225,.92);backdrop-filter:blur(10px);
   border-bottom:1px solid var(--linha);
 }
 .topo__int{display:flex;align-items:center;justify-content:space-between;min-height:84px;gap:24px}
@@ -106,9 +107,9 @@ section[id]{scroll-margin-top:110px}
   letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave);
   transition:color .2s;
 }
-.nav-lista a:hover{color:var(--acento-texto)}
-.nav-cta{border:1px solid var(--tinta) !important;background:var(--tinta);color:var(--off-white) !important;margin-left:8px}
-.nav-cta:hover{background:transparent;color:var(--tinta) !important}
+.nav-lista a:hover{color:var(--marrom-texto)}
+.nav-cta{border:1px solid var(--tinta) !important;margin-left:8px;transition:border-color .2s,color .2s}
+.nav-cta:hover{border-color:var(--marrom-texto) !important;color:var(--marrom-texto)}
 
 .menu-btn{
   display:none;width:44px;height:44px;border:1px solid var(--tinta);background:transparent;
@@ -136,17 +137,16 @@ section[id]{scroll-margin-top:110px}
 }
 
 /* ============================================================
-   BOTÕES :: retangulares, preenchidos em preto ou azul
+   BOTÕES :: retangulares, sempre só de contorno (sem preenchimento)
    ============================================================ */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:17px 34px;border:2px solid var(--tinta);background:var(--tinta);
+  padding:17px 34px;border:1px solid var(--tinta);background:transparent;
   font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--off-white);cursor:pointer;transition:background .25s,color .25s,border-color .25s;
+  color:var(--tinta);cursor:pointer;transition:border-color .25s,color .25s;
 }
-.btn:hover{background:transparent;color:var(--tinta)}
-.btn--marrom{border-color:var(--acento);background:var(--acento);color:var(--tinta)}
-.btn--marrom:hover{background:transparent;color:var(--acento-texto)}
+.btn:hover{border-color:var(--marrom-texto);color:var(--marrom-texto)}
+.btn--nude{border-color:var(--nude)}
 .botoes{display:flex;flex-wrap:wrap;gap:16px}
 
 /* ============================================================
@@ -156,14 +156,14 @@ section[id]{scroll-margin-top:110px}
    ============================================================ */
 .midia{
   position:relative;width:100%;
-  background:linear-gradient(155deg,var(--acento) 0%,var(--acento-suave) 45%,var(--off-white) 100%);
+  background:linear-gradient(155deg,var(--nude) 0%,rgba(201,181,163,.4) 45%,var(--off-white) 100%);
   border:1px solid var(--tinta);
   display:flex;align-items:flex-end;justify-content:flex-start;
   overflow:hidden;
 }
 .midia__legenda{
   padding:14px 18px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--tinta-suave);background:rgba(241,241,241,.75);
+  color:var(--tinta-suave);background:rgba(253,252,250,.8);
 }
 .midia--4-5{aspect-ratio:4/5}
 .midia--9-16{aspect-ratio:9/16}
@@ -185,9 +185,9 @@ section[id]{scroll-margin-top:110px}
 .hero{padding:180px 0 90px;min-height:100svh;display:flex;align-items:center}
 .hero__grade{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;width:100%}
 .hero__tag{
-  display:inline-block;padding:10px 18px;background:var(--tinta);
+  display:inline-block;padding:10px 18px;border:1px solid var(--tinta);
   font-size:.76rem;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--off-white);margin-bottom:26px;
+  color:var(--tinta);margin-bottom:26px;
 }
 .hero h1{font-size:clamp(3rem,7.4vw,5.6rem);letter-spacing:.01em}
 .hero__frase{margin-top:26px;font-size:1.15rem;color:var(--tinta-suave);max-width:46ch}
@@ -200,6 +200,7 @@ section[id]{scroll-margin-top:110px}
 }
 .hero__numero b{
   display:block;font-family:"Tenor Sans",serif;font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:400;
+  color:var(--marrom-texto);
 }
 .hero__numero span{display:block;margin-top:8px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave)}
 
@@ -237,11 +238,11 @@ section[id]{scroll-margin-top:110px}
   display:flex;align-items:baseline;gap:18px;padding:20px 0;border-bottom:1px solid var(--linha);
 }
 .promessas li i{
-  font-style:normal;font-family:"Tenor Sans",serif;font-size:.85rem;color:var(--acento-texto);
-  border:1px solid var(--acento);width:30px;height:30px;flex:none;
+  font-style:normal;font-family:"Tenor Sans",serif;font-size:.85rem;color:var(--marrom-texto);
+  border:1px solid var(--marrom);width:30px;height:30px;flex:none;
   display:inline-flex;align-items:center;justify-content:center;
 }
-.assinatura{margin-top:44px;font-family:"Tenor Sans",serif;font-style:italic;font-size:1.6rem;color:var(--acento-texto)}
+.assinatura{margin-top:44px;font-family:"Tenor Sans",serif;font-style:italic;font-size:1.6rem;color:var(--marrom-texto)}
 
 @media (max-width:880px){
   .sobre__grade{grid-template-columns:1fr;gap:40px}
@@ -252,20 +253,20 @@ section[id]{scroll-margin-top:110px}
    3. CONTEÚDOS DE DESTAQUE
    ============================================================ */
 .destaques-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.destaque-card{display:block;border:2px solid var(--tinta);background:var(--off-white)}
-.destaque-card:hover .midia{filter:brightness(.92)}
+.destaque-card{display:block;border:1px solid var(--tinta);background:var(--off-white)}
+.destaque-card:hover .midia{filter:brightness(.94)}
 .destaque-card .midia{aspect-ratio:9/16}
 .play-botao{
-  position:absolute;inset:0;margin:auto;width:64px;height:64px;
-  background:var(--acento);border:2px solid var(--tinta);border-radius:50%;
+  position:absolute;inset:0;margin:auto;width:60px;height:60px;
+  background:rgba(253,252,250,.92);border:1px solid var(--tinta);
   display:flex;align-items:center;justify-content:center;
 }
 .play-botao::after{
   content:"";width:0;height:0;margin-left:4px;
-  border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid var(--tinta);
+  border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid var(--marrom-texto);
 }
 .destaque-corpo{padding:24px}
-.destaque-numero{font-family:"Tenor Sans",serif;font-size:1.7rem;color:var(--acento-texto)}
+.destaque-numero{font-family:"Tenor Sans",serif;font-size:1.7rem;color:var(--marrom-texto)}
 .destaque-rotulo{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave);margin-top:4px}
 .destaque-titulo{margin-top:18px;font-size:1.1rem}
 .destaque-contexto{margin-top:8px;font-size:.92rem;color:var(--tinta-suave)}
@@ -281,27 +282,30 @@ section[id]{scroll-margin-top:110px}
 .filtro-btn{
   padding:11px 22px;border:1px solid var(--linha-forte);background:transparent;
   font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave);
-  cursor:pointer;transition:.2s;
+  cursor:pointer;transition:border-color .2s,color .2s,box-shadow .2s;
 }
-.filtro-btn:hover{border-color:var(--acento);color:var(--acento-texto)}
-.filtro-btn[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--off-white)}
+.filtro-btn:hover{border-color:var(--marrom);color:var(--marrom-texto)}
+.filtro-btn[aria-pressed="true"]{
+  border-color:var(--tinta);color:var(--tinta);
+  box-shadow:inset 0 -2px 0 0 var(--marrom);
+}
 
 .trabalhos-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px}
 .trabalho-card{border:1px solid var(--tinta);background:var(--off-white);transition:opacity .3s,transform .3s}
 .trabalho-card .midia{aspect-ratio:4/5}
 .trabalho-corpo{padding:20px}
-.trabalho-nicho{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acento-texto)}
+.trabalho-nicho{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--marrom-texto)}
 .trabalho-titulo{margin-top:8px;font-size:1.02rem}
 .trabalho-card.escondido{display:none}
 
 /* ============================================================
    5. COMO EU TE AJUDO
    ============================================================ */
-.servicos-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--tinta);border:1px solid var(--tinta)}
+.servicos-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linha-forte);border:1px solid var(--tinta)}
 .servico-card{background:var(--off-white);padding:44px 36px}
 .servico-numero{
   display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
-  background:var(--acento);font-family:"Tenor Sans",serif;font-size:.95rem;color:var(--tinta);
+  background:var(--nude);border:1px solid var(--tinta);font-family:"Tenor Sans",serif;font-size:.95rem;color:var(--tinta);
 }
 .servico-titulo{margin-top:22px;font-size:1.2rem}
 .servico-desc{margin-top:14px;font-size:.94rem;color:var(--tinta-suave)}
@@ -314,17 +318,18 @@ section[id]{scroll-margin-top:110px}
    6. NÚMEROS E DEPOIMENTOS
    ============================================================ */
 .metricas-grade{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding-bottom:80px;border-bottom:1px solid var(--linha)}
-.metrica{border-top:3px solid var(--acento);padding-top:20px}
+.metrica{border-top:3px solid var(--marrom);padding-top:20px}
 .metrica b{
   display:block;font-family:"Tenor Sans",serif;font-weight:400;font-size:clamp(2.1rem,4vw,3.2rem);
+  color:var(--marrom-texto);
 }
 .metrica span{display:block;margin-top:10px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave)}
 
-.subtitulo-bloco{margin:80px 0 36px;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--acento-texto)}
+.subtitulo-bloco{margin:80px 0 36px;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--marrom-texto)}
 
 .resultados-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding-bottom:80px;border-bottom:1px solid var(--linha)}
-.resultado-card{border:1px solid var(--tinta);border-top:4px solid var(--acento);padding:34px;background:var(--off-white)}
-.resultado-marca{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acento-texto)}
+.resultado-card{border:1px solid var(--tinta);border-top:4px solid var(--marrom);padding:34px;background:var(--off-white)}
+.resultado-marca{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--marrom-texto)}
 .resultado-objetivo{margin-top:16px;font-size:1rem}
 .resultado-texto{margin-top:12px;font-size:.92rem;color:var(--tinta-suave)}
 
@@ -350,10 +355,10 @@ section[id]{scroll-margin-top:110px}
   border:none;border-bottom:1px solid var(--linha-forte);background:transparent;
   padding:12px 2px;font-size:1rem;font-family:"Jost",sans-serif;color:var(--tinta);
 }
-.campo input:focus,.campo textarea:focus{outline:none;border-color:var(--acento)}
+.campo input:focus,.campo textarea:focus{outline:none;border-color:var(--marrom-texto)}
 .campo textarea{resize:vertical;min-height:110px}
 #formConfirmacao{
-  display:none;border:1px solid var(--acento);padding:34px;background:var(--off-white);
+  display:none;border:1px solid var(--marrom);padding:34px;background:var(--off-white);
 }
 #formConfirmacao.ativo{display:block}
 #formularioContato.escondido{display:none}
@@ -365,7 +370,7 @@ section[id]{scroll-margin-top:110px}
   display:flex;justify-content:space-between;align-items:center;padding:20px 0;
   border-bottom:1px solid var(--linha);font-size:.92rem;letter-spacing:.04em;
 }
-.contato-links a span:last-child{color:var(--acento-texto);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+.contato-links a span:last-child{color:var(--marrom-texto);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
 
 @media (max-width:880px){
   .contato-grade{grid-template-columns:1fr;gap:48px}
@@ -378,22 +383,22 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
 .rodape-int{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
 .rodape-marca{font-family:"Tenor Sans",serif;font-size:1.05rem;letter-spacing:.06em;color:var(--off-white)}
 .rodape-redes{display:flex;gap:26px}
-.rodape-redes a{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acento)}
+.rodape-redes a{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--nude)}
 .rodape-redes a:hover{color:var(--off-white)}
-.rodape-copy{width:100%;margin-top:24px;padding-top:24px;border-top:1px solid rgba(241,241,241,.25);font-size:.76rem;color:rgba(241,241,241,.75)}
+.rodape-copy{width:100%;margin-top:24px;padding-top:24px;border-top:1px solid rgba(253,252,250,.2);font-size:.76rem;color:rgba(253,252,250,.72)}
 
 /* ============================================================
    CARD DE CAPTURA (mídia kit)
    ============================================================ */
 .captura-fundo{
-  position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.55);
+  position:fixed;inset:0;z-index:200;background:rgba(42,34,28,.55);
   display:flex;align-items:center;justify-content:center;padding:24px;
   opacity:0;visibility:hidden;transition:opacity .3s ease;
 }
 .captura-fundo.ativo{opacity:1;visibility:visible}
 .captura-card{
   position:relative;width:min(420px,100%);background:var(--off-white);
-  border:1px solid var(--tinta);border-top:4px solid var(--acento);
+  border:1px solid var(--tinta);border-top:4px solid var(--marrom);
   padding:48px 40px;transform:translateY(16px);transition:transform .3s ease;
 }
 .captura-fundo.ativo .captura-card{transform:translateY(0)}
@@ -404,8 +409,8 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
   position:absolute;top:18px;right:18px;width:34px;height:34px;border:1px solid var(--linha-forte);
   background:transparent;cursor:pointer;font-size:1rem;line-height:1;color:var(--tinta-suave);
 }
-.captura-fechar:hover{border-color:var(--acento);color:var(--acento-texto)}
-.captura-tag{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acento-texto)}
+.captura-fechar:hover{border-color:var(--marrom-texto);color:var(--marrom-texto)}
+.captura-tag{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--marrom-texto)}
 .captura-card h3{margin-top:16px;font-size:1.5rem}
 .captura-card p{margin-top:12px;font-size:.92rem;color:var(--tinta-suave)}
 .captura-card form{margin-top:28px}
@@ -462,17 +467,17 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
       <div>
         <span class="hero__tag">Criadora de conteúdo UGC</span>
         <h1>Gabriela<br>Sayuri</h1>
-        <p class="hero__frase">Eu crio vídeos e fotos autênticos que fazem a sua marca soar como uma amiga dando uma indicação, não como um anúncio.</p>
+        <p class="hero__frase">Maternidade que conecta e converte para o público que mais toma decisão de compra dentro do lar.</p>
         <div class="botoes">
           <a href="#contato" class="btn">Falar comigo</a>
-          <a href="#trabalhos" class="btn btn--marrom">Ver os trabalhos</a>
+          <a href="#trabalhos" class="btn btn--nude">Ver os trabalhos</a>
         </div>
 
         <div class="hero__numeros">
           <!-- Números rápidos da capa: troque os valores no array heroNumeros no script -->
           <div class="hero__numero"><b data-contador data-alvo="0" data-sufixo="+">0+</b><span>Vídeos entregues</span></div>
-          <div class="hero__numero"><b data-contador data-alvo="0" data-sufixo="+">0+</b><span>Marcas atendidas</span></div>
-          <div class="hero__numero"><b data-contador data-alvo="0" data-sufixo="M+">0M+</b><span>Views somadas</span></div>
+          <div class="hero__numero"><b data-contador data-alvo="100" data-sufixo="+">0+</b><span>Marcas atendidas</span></div>
+          <div class="hero__numero"><b data-contador data-alvo="2" data-sufixo="M+">0M+</b><span>Views somadas</span></div>
         </div>
       </div>
 
@@ -503,7 +508,7 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
       </div>
       <div class="sobre__texto">
         <span class="numero-secao"><i>01</i>Sobre</span>
-        <p>Oi, eu sou a Gabriela. Moro em Florianópolis e vivo criando conteúdo que parece uma conversa entre amigas, não um comercial. Gosto de testar produtos de verdade, mostrar o que funciona e contar isso do meu jeito, com leveza e sem forçar a barra.</p>
+        <p>Oi, eu sou a Gabriela. Moro em Florianópolis e crio conteúdo autêntico para marcas de beleza, moda, comida, casa e decoração, maternidade e pet. Como mãe, sei como ninguém o peso da decisão de quem cuida da casa, e é esse olhar que eu levo para cada vídeo que gravo.</p>
         <p>Trabalho de perto com cada marca desde a ideia até a entrega final, porque acredito que o melhor resultado nasce quando a gente constrói o roteiro junto.</p>
         <ul class="promessas">
           <li><i>01</i> Roteiro aprovado antes de gravar</li>
@@ -618,7 +623,7 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
 
         <div class="contato-lateral reveal">
           <h3>Outros jeitos de falar comigo</h3>
-          <p>Se preferir, me chama direto por um desses canais.</p>
+          <p>Atendo marcas de todo o Brasil, gravando em Florianópolis. Se preferir, me chama direto por um desses canais.</p>
           <div class="contato-links">
             <a href="https://wa.me/5511985736033" target="_blank" rel="noopener noreferrer">
               <span>WhatsApp</span><span>(11) 98573-6033</span>
@@ -683,16 +688,17 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
      DADOS :: edite os arrays abaixo para atualizar o site
      ========================================================== */
 
-  // Marcas que já trabalharam com a creator (troque pelos nomes reais)
-  var marcas = ["Marca 01","Marca 02","Marca 03","Marca 04","Marca 05","Marca 06","Marca 07","Marca 08","Marca 09","Marca 10","Marca 11","Marca 12"];
+  // Marcas que já trabalharam com a creator (troque ou adicione novas)
+  var marcas = ["Leiturinha","Dove","Saint German","TodBaby","Decathlon","L’Oreal","Liv UP","Spoleto"];
 
   // Conteúdos de destaque (seção 02).
-  // videoUrl: troque "#" pelo link real do vídeo (Reels, TikTok, YouTube etc).
-  // A capa é o bloco .midia dentro de cada card: troque por um <img> real quando tiver a imagem.
+  // videoUrl já está com os links reais que você passou.
+  // A capa é o bloco .midia dentro de cada card: troque por um <img> real quando tiver a imagem
+  // (é só substituir a div.midia mantendo a classe midia midia--9-16).
   var destaques = [
-    { titulo:"Rotina de skincare com o produto", contexto:"Vídeo de rotina mostrando o produto no uso real do dia a dia.", numero:"+0", rotulo:"views no reels", videoUrl:"#" },
-    { titulo:"Unboxing e primeira impressão", contexto:"Reação genuína ao abrir a caixa, sem roteiro engessado.", numero:"+0", rotulo:"views no reels", videoUrl:"#" },
-    { titulo:"Antes e depois em 15 segundos", contexto:"Formato rápido pensado para performar como anúncio.", numero:"+0", rotulo:"views no reels", videoUrl:"#" }
+    { titulo:"Conteúdo em destaque 01", contexto:"Troque por uma linha curta contando o contexto deste vídeo.", numero:"+1,4M", rotulo:"views no tiktok", videoUrl:"https://vt.tiktok.com/ZSqK48Acs/" },
+    { titulo:"Conteúdo em destaque 02", contexto:"Troque por uma linha curta contando o contexto deste vídeo.", numero:"+16K", rotulo:"views no tiktok", videoUrl:"https://vt.tiktok.com/ZSqK4CjCv/" },
+    { titulo:"Conteúdo em destaque 03", contexto:"Troque por uma linha curta contando o contexto deste vídeo.", numero:"+20K", rotulo:"views no reels", videoUrl:"https://www.instagram.com/reel/DSueAVDAJLz/?stkn=eGR2MGI5NnRtb3Jl" }
   ];
 
   // Trabalhos por nicho (seção 03). nicho é usado no filtro.
@@ -701,10 +707,14 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
     { titulo:"Trabalho 02", nicho:"Beleza" },
     { titulo:"Trabalho 03", nicho:"Moda" },
     { titulo:"Trabalho 04", nicho:"Moda" },
-    { titulo:"Trabalho 05", nicho:"Casa" },
-    { titulo:"Trabalho 06", nicho:"Alimentação" },
-    { titulo:"Trabalho 07", nicho:"Alimentação" },
-    { titulo:"Trabalho 08", nicho:"Tecnologia" }
+    { titulo:"Trabalho 05", nicho:"Comida" },
+    { titulo:"Trabalho 06", nicho:"Comida" },
+    { titulo:"Trabalho 07", nicho:"Casa e Decoração" },
+    { titulo:"Trabalho 08", nicho:"Casa e Decoração" },
+    { titulo:"Trabalho 09", nicho:"Maternidade" },
+    { titulo:"Trabalho 10", nicho:"Maternidade" },
+    { titulo:"Trabalho 11", nicho:"Pet" },
+    { titulo:"Trabalho 12", nicho:"Pet" }
   ];
 
   // Serviços (seção 04)
@@ -720,16 +730,16 @@ footer{padding:56px 0;background:var(--tinta);color:var(--off-white)}
   // Métricas com contador animado (seção 05). Troque "alvo" pelos números reais.
   var metricas = [
     { alvo:0, sufixo:"+", rotulo:"Vídeos entregues" },
-    { alvo:0, sufixo:"+", rotulo:"Marcas atendidas" },
-    { alvo:0, sufixo:"M+", rotulo:"Views somadas" },
+    { alvo:100, sufixo:"+", rotulo:"Marcas atendidas" },
+    { alvo:2, sufixo:"M+", rotulo:"Views somadas" },
     { alvo:0, sufixo:"%", rotulo:"Entregas no prazo" }
   ];
 
   // Resultados de campanha (seção 05)
   var resultados = [
-    { marca:"Marca 01", objetivo:"Aumentar o reconhecimento de um lançamento", texto:"Conteúdo usado como anúncio pago, com boa retenção até o final do vídeo." },
-    { marca:"Marca 02", objetivo:"Gerar prova social para a loja virtual", texto:"Vídeos de unboxing publicados na página do produto e nos stories da marca." },
-    { marca:"Marca 03", objetivo:"Testar um novo formato de anúncio", texto:"Corte vertical de 15 segundos adaptado para rodar em diferentes plataformas." }
+    { marca:"Dove", objetivo:"Apresentar o produto no dia a dia real", texto:"Vídeo UGC usado como conteúdo orgânico e como criativo de anúncio." },
+    { marca:"TodBaby", objetivo:"Aproximar a marca do público de mães", texto:"Conteúdo de maternidade com uso real do produto na rotina com o bebê." },
+    { marca:"Decathlon", objetivo:"Gerar prova social para o lançamento", texto:"Vídeo publicado no perfil da creator e reaproveitado pela marca nos stories." }
   ];
 
   // Depoimentos (seção 05)
